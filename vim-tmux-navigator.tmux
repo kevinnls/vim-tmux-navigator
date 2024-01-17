@@ -11,8 +11,8 @@ tmux bind-key -n M-l if-shell "$is_vim" "send-keys M-l" "select-pane -R"
 tmux_version="$(tmux -V | sed -En "$version_pat")"
 tmux setenv -g tmux_version "$tmux_version"
 
-tmux bind-key -n M-n if-shell "$is_vim" "send-keys M-n" "next-window"
-tmux bind-key -n M-p if-shell "$is_vim" "send-keys M-p" "previous-window"
+tmux bind-key -n M-n "next-window"
+tmux bind-key -n M-p "previous-window"
 
 #echo "{'version' : '${tmux_version}', 'sed_pat' : '${version_pat}' }" > ~/.tmux_version.json
 
